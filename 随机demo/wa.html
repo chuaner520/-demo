@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>川儿-文案馆</title>
+<script src="./js/get.js"></script>
+<script src="./js/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div id="wrapper">
+	<div class="overlay"></div>
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+		<ul class="nav sidebar-nav">
+			<li class="sidebar-brand">
+				<a href="#">
+				   导航
+				</a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-fw fa-home"></i> 首页</a>
+			</li>
+			<li>
+				<a href="http://wpa.qq.com/msgrd?v=3&uin=2637089270&site=qq&menu=yes"><i class="fa fa-fw fa-qq"></i> QQ</a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-fw fa-qq"></i>群号：180894171</a>
+			</li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> 慰藉站点 <span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li class="dropdown-header">娱乐列表</li>
+				<li><a href="./index.html">川儿-心灵毒鸡汤</a></li>
+				<li><a href="./xh.html">川儿-冷笑话</a></li>
+				<li><a href="#">川儿-音乐站</a></li>
+				<li><a href="#">川儿-专属文案</a></li>
+				<li><a href="tel:15730521040">call联系川儿</a></li>
+			  </ul>
+			</li>
+		</ul>
+	</nav>
+	<div id="page-content-wrapper">
+	  <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+		<span class="hamb-top"></span>
+		<span class="hamb-middle"></span>
+		<span class="hamb-bottom"></span>
+	  </button>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="pic">
+						<a href="http://wpa.qq.com/msgrd?v=3&uin=2637089270&site=qq&menu=yes" title="点我联系川儿">
+							<img src="./img/t.jpg" alt="">
+						</a>
+					</div>
+					<div class="name_ti">
+						<a href="#">川儿-文案馆<div class="line"></div></a>
+					</div>
+					<div class="name_ti">
+						<div class="linse"></div>
+						<p>强者并非赢家 赢家方为强者<div class="line"></div></p>
+					</div>
+					<p id="id1" onclick="copyContent(this)";>快乐与你同在。只要我不在</p>
+					<input id="copy_content" type="text" value=""  style="position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;"/>
+					<div class="btns">
+						<button onclick="Getss()">点击我刷新</button>
+					</div>
+				</div>
+			</div>
+            <div class="footer">
+				<a href="#">Copyright © 2022 川儿-心灵慰藉 All Rights Reserved.</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+	  var trigger = $('.hamburger'),
+		  overlay = $('.overlay'),
+		 isClosed = false;
+
+		trigger.click(function () {
+		  hamburger_cross();      
+		});
+
+		function hamburger_cross() {
+
+		  if (isClosed == true) {          
+			overlay.hide();
+			trigger.removeClass('is-open');
+			trigger.addClass('is-closed');
+			isClosed = false;
+		  } else {   
+			overlay.show();
+			trigger.removeClass('is-closed');
+			trigger.addClass('is-open');
+			isClosed = true;
+		  }
+	  }
+	  
+	  $('[data-toggle="offcanvas"]').click(function () {
+			$('#wrapper').toggleClass('toggled');
+	  });  
+	});
+</script>
+</body>
+</html>
